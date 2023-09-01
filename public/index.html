@@ -18,9 +18,19 @@
       ds.simulate(5);
     }
 
+    let drawTiling = false;
+
     function draw() {
       background(0);
-      ds.render();
+      if (drawTiling) {
+        ds.render();
+      }
+    }
+
+    function mousePressed() {
+      console.log(drawTiling + "before mousePressed logic is applied")
+      drawTiling = !drawTiling;
+      console.log(drawTiling + "after mousePressed logic is applied")
     }
 
     function PenroseLSystem() {
